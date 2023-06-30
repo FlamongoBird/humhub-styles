@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+
+/* You can mess with these values if you want to change colors/customize some stuff */
+/* If you do use different fonts you'll need to load them with google fonts or use the built in ones */
+
+
+:root {
+    --background1: #222831;
+    --background2: #393E46;
+    --highlight1: #FF0000;
+    --highlight2: #FF165D;
+    --shadow: black;
+    --icons: white;
+    --text: #EEEEEE;
+    --buttons: #8C82FC;
+    --links: lightblue;
+    --main-font: 'Share Tech Mono', monospace;
+    --header-font: monospace;
+    --your-pms: red;
+}
+
+body {
+    background-color: var(--background1);
+    color: var(--text) !important;
+    font-family: var(--main-font) !important;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--header-font);
+}
+
+/* panels */
+
+.panel{
+    background-color: var(--background1);
+    box-shadow: 0px 0px 20px var(--shadow);
+    border: none;
+    border-radius: 20px;
+}
+
+.count {
+    color: var(--highlight2) !important;
+}
+
+.panel-heading {
+    background-color: var(--background1) !important;
+    border-radius: 20px !important;
+}
+.list-group a {
+    background-color: var(--background1) !important;
+}
+
+.wall-entry {
+    border-radius: 20px;
+}
+
+.img-rounded {
+    border-radius: 50%;
+}
+
+/* Top Bar */
+
+#topbar-first {
+    background-color: var(--background1);
+}
+#topbar-second {
+    background-color: var(--background2);
+}
+
+.top-menu-item a:hover, .top-menu-item .active {
+    background-color: var(--background1) !important;
+}
+.wall-entry-header-info .media-heading a {
+    color: var(--highlight2);
+    font-family: var(--header-font) !important;
+}
+.top-menu-item a {
+    color: var(--text) !important;
+}
+
+#icon-notifications, #icon-messages {
+    background-color: var(--background2) !important;
+}
+
+#badge-messages, #badge-notifications {
+    background-color: var(--highlight1);
+}
+#account-dropdown-link {
+    background-color: var(--background1) !important;
+}
+
+/* post stuff */
+
+.wall-entry-content p, .wall-entry-content h1, .wall-entry-content h2, .wall-entry-content h3, .wall-entry-content h4, .wall-entry-content h5, .wall-entry-content h6, .wall-entry-content li, .wall-entry-content span {
+    color: white !important;
+}
+
+.wall-entry-content a {
+    color: var(--links) !important;
+}
+
+.label-default {
+    border: 1px solid var(--highlight2) !important;
+    color: var(--text) !important;
+}
+
+.content .comment-message p a {
+    color: var(--links) !important;
+}
+
+
+/* icon colors */
+
+.fa {
+    color: var(--icons);
+}
+
+.ProseMirror {
+    background-color: var(--background2);
+    border: 1px solid black;
+    color: var(--text) !important;
+}
+
+.ProseMirror p {
+    color: var(--text) !important;
+}
+
+.well {
+    background-color: var(--background1) !important;
+    border-top: 3px solid var(--icons);
+}
+
+.media h4 a {
+    color: var(--highlight2) !important;
+}
+.media p {
+    color: var(--text) !important;
+}
+
+/* buttons */
+
+.comment_create .comment-buttons button, .btn-primary, {
+    background-color: var(--buttons) !important;
+    color: var(--text);
+}
+
+.comment_create .comment-buttons .btn-default[type="submit"] {
+    background-color: var(--buttons) !important;
+    color: var(--text);
+}
+
+.btn-default, .btn {
+    background-color: grey;
+    color: var(--text) !important;
+}
+
+
+/* Profile Specific */
+
+.panel-profile-header {
+    border: none !important;
+}
+
+/* Polls */
+
+
+.progress-bar {
+    background-color: var(--highlight1);
+}
+
+
+/* PMS */
+
+.conversation-entry-content {
+    background-color: var(--background2);
+}
+.conversation-entry-content.own {
+    background-color: var(--your-pms);
+}
+
+
+.sk-spinner-three-bounce {
+    color: red !important;
+}
+
+.messagePreviewEntry.selected, .messagePreviewEntry.unread, .messagePreviewEntry:hover {
+    background-color: var(--background2) !important;
+}
+
+
+/* Notifs */
+
+#dropdown-notifications {
+    background-color: var(--background1);
+}
+#dropdown-notifications .new {
+    background-color: var(--background2);
+}
+#dropdown-notifications .new .media-body  {
+    color: var(--text) !important;
+}
+#dropdown-notifications .new strong  {
+    color: var(--highlight2) !important;
+}
+
+#dropdown-notifications .media-list li:hover {
+    background-color: var(--background2);
+}
+
+/* Spaces Dropdown */
+
+.dropdown.open a, .dropdown a:hover{
+    background-color: var(--background1) !important;
+}
+
+.dropdown-menu {
+    background-color: var(--background1);
+}
+
+.dropdown-menu .media-list li:hover {
+    background-color: var(--background2);
+}
+
+.dropdown-menu .media-list li strong {
+    color: var(--highlight1);
+}
+.dropdown-menu .media-list li .badge {
+    background-color: var(--highlight1);
+}
+
