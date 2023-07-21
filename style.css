@@ -1,30 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+/* Import the font I'm using, if you chose to change the font and it's not a default one you'll need to import it here as well */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 
-/* You can mess with these values if you want to change colors/customize some stuff */
-/* If you do use different fonts you'll need to load them with google fonts or use the built in ones */
-
+/* Main controls for the styles, this is all you need to edit for color, shadow, fonts, etc */
 
 :root {
-    --background1: #222831;
-    --background2: #393E46;
-    --highlight1: #FF0000;
-    --highlight2: #FF165D;
-    --shadow: black;
-    --icons: white;
-    --text: #EEEEEE;
-    --buttons: #8C82FC;
-    --links: lightblue;
-    --main-font: 'Share Tech Mono', monospace;
-    --header-font: monospace;
-    --your-pms: red;
+    --background1: rgba(34, 40, 49, .5); /* Main Background Color */
+    --background2: rgba(57, 62, 70, .5); /* Secondary Background Color */
+    --background-solid1: rgb(34, 40, 49); /* Set to same as above, but without the opacity setting */
+    --background-solid2: rgb(57, 62, 70);
+    --highlight1: #FF0000; /* Highlight color 1 */
+    --highlight2: #FF165D; /* Hightliht color 2 */
+    --shadow: black; /* Experiment with this, but it's probably best left black */
+    --icons: white; /* Changes the color of icons, like the little bell, stack, etc */
+    --text: #EEEEEE; /* Text color, all text color is currently this or humhub's default */
+    --buttons: linear-gradient(to right, #ff512f, #f09819); /* The gradient for buttons */
+    --buttons-hover: linear-gradient(to right, #ff9966, #ff5e62); /* The gradient for buttons on hover */
+    --links: lightblue; /* the color for links */
+    --main-font: "Poppins", sans-serif; /* Main font for all text */
+    --header-font: "Poppins", sans-serif; /* Header font only effects h1-h6 tags (aka the headers)*/
+    --your-pms: rgba(46, 118, 232, .5); /* The color for your PM's, instead of the default being the same color as everyone elses */
+    --main-background: rgba(0, 0, 0, .5); /* This is the color that sits on top of your background image, you can use this
+    to tweak the filter on the background image */
+    --polls: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); /* Gradient as well, used for coloring
+    the poll bars */
 }
 
+/* You can also change some stuff here if you like */
+
+html {
+    background-image: url("https://i.imgur.com/w6MRrVZ.jpeg"); /* Set this to the URL of the background image you want to use */
+    background-size: fit; /* I suggest leaving this as fit, but you might want to use `cover` or `auto` */
+    background-attachment:fixed; /* Unless you want your background to scroll as you scroll, leave this fixed, or else you can set it to none */
+    background-color: black; /* Incase your image doesn't load, this will be the default color */
+}
+
+
+/* Any further editing and You'll need some CSS knowledge, so if you don't I recommend you stop here
+if you can write CSS, then knock yourself out */
+
+
 body {
-    background-color: var(--background1);
+    background-color: var(--main-background);
     color: var(--text) !important;
     font-family: var(--main-font) !important;
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--header-font);
 }
@@ -60,9 +82,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Top Bar */
 
+#account-top-menu {
+    background: none;
+}
+
 #topbar-first {
     background-color: var(--background1);
 }
+
 #topbar-second {
     background-color: var(--background2);
 }
@@ -86,8 +113,9 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--highlight1);
 }
 #account-dropdown-link {
-    background-color: var(--background1) !important;
+    background-color: var(--background2) !important;
 }
+
 
 /* post stuff */
 
@@ -140,18 +168,31 @@ h1, h2, h3, h4, h5, h6 {
 /* buttons */
 
 .comment_create .comment-buttons button, .btn-primary, {
-    background-color: var(--buttons) !important;
+    background: var(--buttons) !important;
     color: var(--text);
 }
 
 .comment_create .comment-buttons .btn-default[type="submit"] {
-    background-color: var(--buttons) !important;
+    background: var(--buttons) !important;
     color: var(--text);
 }
 
 .btn-default, .btn {
-    background-color: grey;
+    background: var(--buttons) !important;
     color: var(--text) !important;
+}
+.regular-checkbox-box {
+    transition: .4s;
+    background: none !important;
+}
+
+
+.regular-checkbox-box:hover {
+    border-color: var(--highlight2) !important;
+}
+
+.btn-default:hover, .btn:hover {
+    background: var(--buttons-hover) !important;
 }
 
 
@@ -166,6 +207,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .progress-bar {
     background-color: var(--highlight1);
+    background: var(--polls);
 }
 
 
@@ -187,12 +229,18 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--background2) !important;
 }
 
+#dropdown-messages, #dropdown-notifications {
+    background-color: var(--background1) !important;
+    backdrop-filter: blur(6px) !important;
+    box-shadow: 0px 0px 12px black;
+}
+#dropdown-messages {
+    backdrop-filter: blur(6px);
+}
 
 /* Notifs */
 
-#dropdown-notifications {
-    background-color: var(--background1);
-}
+
 #dropdown-notifications .new {
     background-color: var(--background2);
 }
@@ -213,8 +261,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--background1) !important;
 }
 
-.dropdown-menu {
-    background-color: var(--background1);
+#space-menu-dropdown {
+    background-color: var(--background) !important;
+    backdrop-filter: blur(3px);
+    box-shadow: 0px 0px 12px black;
 }
 
 .dropdown-menu .media-list li:hover {
@@ -222,9 +272,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dropdown-menu .media-list li strong {
-    color: var(--highlight1);
+    color: var(--highlight2);
 }
 .dropdown-menu .media-list li .badge {
     background-color: var(--highlight1);
 }
 
+.col-md-8:nth-child(1) {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.layout-sidebar-container {
+    display: none;
+}
+
+/* Style the Load new Posts button */
+
+.label-info {
+    background-color: var(--background2);
+}
+
+/* Account dropdown */
+
+.dropdown-menu {
+    background-color: var(--background2) !important;
+}
