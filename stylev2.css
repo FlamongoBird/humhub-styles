@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Feel free to edit this to your liking, if you do know CSS you can can edit all of it, if 
+not I've commented on a bunch of stuff under :root that will let you change colors, fonts, etc */
+/* For none default fonts you will need to use google fonts, if you've never done it before it's
+very easy, just go to fonts.google.com, find a font you like, select it, and then use the `import`
+tag, not the `link` tag. You just need the part that says `@import url (yada yada)` you can
+leave the <style></style> part out, just like I did with Roboto above. /*
+/* After that go down to the second :root section and change the main/or header font values to 
+whatever font you selected */
+/* Colors can be in pretty much any format, the name, (blue, red, green, etc), the hex value, rgb, rgba, hsl, hsla, etc */
+/* Some examples so you can see the format: */
+
+/*
+rgb: rgb(0, 0, 0);
+rgba: rgba(0, 0, 0, 0);
+hsl: hsl(0, 0, 0);
+hsla: hsla(0, 0, 0, 0);
+hex: #000;
+name: black;
+*/
+
+/* A few things like the color for buttons and polls can be gradients */
+/* You can use a tool like cssgradient.io and then copy the value from the second `background: ` */
+
+
+
+
+/* Stuff I wouldn't suggest messing with */
+:root {
+    --background1: rgba(34, 40, 49, .5); /* Old bg stuff, only used for a few items, mostly here for compatability */
+    --background2: rgba(57, 62, 70, .5); /* Same as the one above, just the secondary background */
+    --background-solid1: rgb(34, 40, 49); /* Both of these are the same as well except solid and not opaque */
+    --background-solid2: rgb(57, 62, 70);
+}
+
+/* stuff you can feel free to mess with */
+
+:root {
+    --main-bg: #1c262f; /* The main background color */
+    --fore-bg: #252f39; /* The background color for items on top of the main background */
+    --highlight1: #ee5c75; /* Highlight color 1 (notifs, names, etc) */
+    --highlight2: #92a5c1; /* Secondary highlight (other important text, dividing lines, etc) */
+    --text: #8093ac; /* Default text color */
+    --dull: #bebebe; /* Dull color for less important text */
+    --buttons: #1c262f; /* Background color for buttons */
+    --buttons-hover: #1c262f; /* Background color for buttons on hover */
+    --badge-color: #1a9399; /* Color for user badges (CA's, etc) */
+    --clear-bg: rgba(28, 38, 47, .9); /* Background for transparent items */
+    --your-pms: rgba(46, 118, 232, .5); /* background color for pm's written by you */
+    --links: lightblue; /* Color for links and tags */
+    --main-font: "Roboto", sans-serif; /* Default font */
+    --header-font: "Roboto", sans-serif; /* Font for headers and other important text */
+    --polls: linear-gradient(90deg, rgba(226,172,172,1) 0%, rgba(238,92,117,1) 100%); /* Background for polls, if you don't know how to write linear-gradients you can use a tool like this one https://cssgradient.io/ */
+     --icons: white; /* Color for small icons (notifs bell, button icons, etc) */
+    --your-tag: #4287f5; /* The color your tags will show up as (making it easy to see where you have been tagged */)
+}
+
+/* Another important note for updates, if you have changed the values above to your own
+color scheme, you don't need to ruin it if I update the code and you want to use the new
+stuff, just save the two :root sections above, paste in the new code and replace it's :root sections
+with yours and all your colors will `cascade` down (after all... this is Cascading Style Sheets)
+*/
+
+/* And finally this... a bit of code to change the color of your tags */
+/* That way you can more easily see when someone has tagged you on something, useful for me at least */
+
+/* 
+If you don't want it just delete it, or you do want to use it, you need to change the /u/dumb to 
+whatever your username is. You can find your username by clicking on your profile, take a look at the 
+url it takes you to, it should be something like community.theyoungwriter.com/u/username/?content yada yda
+Your username is the part that says /u/username, if you haven't changed it it's probably something like
+`aosdfuo8afh` or something random, if you have changed it, it will be whatever you changed it to.
+Replace my username with that in quotes below, and it will highlight your username with whatever color
+`--your-tag` is set to. 
+*/
+
+.content .comment-message p a[href*="/u/dumb"], .wall-entry-content p a[href*="/u/dumb"] {
+    color: var(--your-tag) !important;
+}
+
+
+/* Stop editing here, unless you know CSS or are confident messing with stuff. */
+
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text) !important;
+    font-family: var(--main-font) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--header-font);
+}
+
+
+/* just trolling */
+
+.topbar-brand a{
+    display: none;
+}
+.topbar-brand:after {
+    position: fixed;
+    content: "Ydubs";
+    font-size: 20px;
+    top: 11px;
+    left: 20px;
+}
+
+
+
+
+/* top bars */
+
+#account-top-menu {
+    background: none;
+}
+
+#topbar-first {
+    background-color: var(--fore-bg);
+}
+
+#topbar-second {
+    background-color: var(--main-bg);
+    border-bottom: 1px solid var(--highlight2);
+    /*width: 80%;*/
+    text-align: center !important;
+    /*margin: 0px 50%;*/
+    /*transform: translateX(-50%);*/
+    border-radius: 3px;
+}
+
+.top-menu-item a:hover {
+    background-color: var(--fore-bg) !important;
+    border-bottom: none !important;
+}
+.top-menu-item .active {
+    background-color: var(--fore-bg) !important;
+}
+.top-menu-item {
+    border: none !important;
+}
+.top-menu-item:hover {
+    border: none !important;
+}
+#top-menu-nav {
+    border: none !important;
+}
+.no-space {
+    border-bottom: none !important;
+}
+.dropdown a {
+    color: var(--highlight2) !important;
+    border: none !important;
+}
+
+
+
+
+/* panels */
+
+.panel{
+    background-color: var(--fore-bg);
+    border: none;
+    box-shadow: none;
+}
+
+.count {
+    color: var(--highlight2) !important;
+}
+
+.list-group a {
+    background-color: var(--background1) !important;
+}
+
+
+.img-rounded {
+    border-radius: 50%;
+}
+
+:not(.img-online-normal) > .img-online {
+    border: none !important;
+}
+
+/* Selects usernames on posts and in comments */
+.wall-entry-header-info, .media-heading a, .media h4 a {
+    color: var(--highlight1) !important;
+    font-weight: bold;
+    font-family: var(--header-font) !important;
+}
+
+/* Changes post header */
+.wall-entry-header {
+    border-bottom: var(--highlight1) 1px solid !important;
+}
+.wall-entry-header .media-subheading .wall-entry-container-link {
+    color: var(--highlight2) !important;
+}
+
+/* Changes comment like and bookmark buttons */
+.wall-entry-controls a {
+    color: var(--highlight2) !important;
+}
+
+/* Changes annoying white line below wall entry controls */
+.comment-container {
+    border-top: 1px solid var(--highlight1) !important;
+}
+/* Changes the line at the comment start seperater */
+.comments-start-separator {
+    border-top: 1px solid var(--highlight2) !important;
+}
+/* load more comments text color */
+.comment-container .show-all-link {
+    color: var(--dull);
+}
+/* fixes comment borders */
+.media hr, .comment_create hr {
+    border-top: 1px var(--highlight2) solid !important;
+}
+
+/* links and tags */
+.media p a, .media p a:visited {
+    color: var(--links) !important;
+}
+
+/* Block quotes */
+blockquote {
+    border-left-color: var(--highlight1) !important;
+}
+
+/* changes color of show more link to links */
+
+.showMore {
+    color: var(--links) !important;
+}
+.media .content a {
+    color: var(--links) !important;
+}
+
+/* changes text box border on active */
+
+.ProseMirror-focused {
+    border: 2px solid var(--highlight2) !important;
+}
+
+
+/* Edits Prose Mirror Editor */
+
+.ProseMirror-menubar {
+    background-color: var(--main-bg) !important;
+    border: 1px solid var(--highlight1) !important;
+    border-bottom: none !important;
+}
+.ProseMirror-menubar svg {
+    color: var(--highlight2);
+}
+
+
+/* notifs and stuff */
+
+.top-menu-item a {
+    color: var(--text) !important;
+}
+
+#icon-notifications, #icon-messages {
+    background-color: var(--background2) !important;
+}
+
+#badge-messages, #badge-notifications {
+    background-color: var(--highlight1);
+}
+#account-dropdown-link {
+    background-color: inherit !important;
+}
+#account-dropdown-link .user-title {
+    display: none;
+}
+
+/* Stuff for username badges (spring guardian, fellowhsip leader, etc) */
+
+/* In comments: */
+.user-badge {
+    background-color: var(--badge-color) !important;
+    color: white !important;
+}
+
+/* My navigator stuff */
+
+#my-navigator {
+    
+}
+
+/* post stuff */
+
+.wall-entry-content p, .wall-entry-content h1, .wall-entry-content h2, .wall-entry-content h3, .wall-entry-content h4, .wall-entry-content h5, .wall-entry-content h6, .wall-entry-content li, .wall-entry-content span {
+    color: var(--text) !important;
+}
+
+.wall-entry-content a {
+    color: var(--links) !important;
+}
+
+.label-default {
+    border: 1px solid var(--highlight2) !important;
+    color: var(--text) !important;
+}
+
+.content .comment-message p a {
+    color: var(--links) !important;
+}
+
+
+/* icon colors */
+
+.fa {
+    color: var(--icons);
+}
+
+.ProseMirror {
+    background-color: var(--background2);
+    border: none;
+    border-radius: 1px !important;
+    color: var(--text) !important;
+}
+
+.ProseMirror p {
+    color: var(--text) !important;
+}
+
+.well {
+    background-color: var(--background1) !important;
+    border-top: 3px solid var(--icons);
+}
+
+
+.media p {
+    color: var(--text) !important;
+}
+
+/* buttons */
+
+.comment_create .comment-buttons button, .btn-primary, {
+    background: var(--buttons) !important;
+    color: var(--text);
+    border-radius: 2px !important;
+}
+
+.comment_create .comment-buttons .btn-default[type="submit"] {
+    background: var(--buttons) !important;
+    color: var(--text);
+    border-radius: 2px !important;
+}
+
+.btn-default, .btn {
+    background: var(--buttons) !important;
+    color: var(--text) !important;
+    border-radius: 2px !important;
+}
+.regular-checkbox-box {
+    transition: .4s;
+    background: none !important;
+}
+
+
+.regular-checkbox-box:hover {
+    border-color: var(--highlight2) !important;
+}
+
+.btn-default:hover, .btn:hover {
+    background: var(--buttons-hover) !important;
+}
+
+
+/* Profile Specific */
+
+.panel-profile-header {
+    border: none !important;
+}
+.left-navigation .panel-heading {
+    background-color: var(--fore-bg);
+    color: var(--dull);
+}
+.left-navigation .list-group a {
+    color: var(--dull);
+    border-left: var(--highlight2) 2px solid !important;
+}
+.left-navigation .list-group a:hover {
+    border-left: none !important;
+}
+.edit-account {
+    background-color: var(--main-bg) !important;
+    border: 1px solid var(--highlight2);
+}
+.edit-account:hover {
+    background-color: var(--fore-bg) !important;
+    border: 1px solid var(--highlight2);
+}
+
+
+/* Polls */
+
+
+.progress-bar {
+    background-color: var(--highlight1);
+    background: var(--polls);
+}
+
+
+/* PMS */
+
+.conversation-entry-content {
+    background-color: var(--background2);
+}
+.conversation-entry-content.own {
+    background-color: var(--your-pms);
+}
+
+.panel-heading {
+    background-color: var(--fore-bg) !important;
+    color: var(--text) !important;
+}
+.panel-heading a {
+    color: inherit;
+}
+
+
+/* random styling for oddly specific stuff */
+
+.sk-spinner-three-bounce div {
+    background-color: var(--highlight1) !important;
+}
+
+.messagePreviewEntry.selected, .messagePreviewEntry.unread, .messagePreviewEntry:hover {
+    background-color: var(--background2) !important;
+}
+
+#dropdown-messages, #dropdown-notifications {
+    background-color: var(--background1) !important;
+    backdrop-filter: blur(6px) !important;
+    box-shadow: 0px 0px 12px black;
+}
+#dropdown-messages {
+    backdrop-filter: blur(6px);
+}
+.wall-stream-filter-head {
+    border-bottom-color: var(--highlight1) !important;
+}
+
+/* Notifs */
+
+
+#dropdown-notifications .new {
+    background-color: var(--background2);
+}
+#dropdown-notifications .new .media-body  {
+    color: var(--text) !important;
+}
+#dropdown-notifications .new strong  {
+    color: var(--highlight2) !important;
+}
+
+#dropdown-notifications .media-list li:hover {
+    background-color: var(--background2);
+}
+
+/* Spaces Dropdown */
+
+.dropdown.open a, .dropdown a:hover{
+    background-color: var(--background1) !important;
+}
+
+#space-menu-dropdown {
+    background-color: var(--clear-bg) !important;
+    backdrop-filter: blur(3px);
+    box-shadow: 0px 0px 12px black;
+}
+#space-menu-dropdown .input-group input {
+    background-color: var(--background1) !important;
+    border: 1px solid var(--highlight1);
+}
+#space-menu-dropdown .input-group span {
+    background-color: var(--fore-bg);
+    border: 1px solid var(--highlight1);
+}
+#space-menu-dropdown .input-group span:hover {
+    background-color: var(--main-bg);
+}
+
+.dropdown-menu .media-list li:hover {
+    background-color: var(--background2);
+}
+
+.dropdown-menu .media-list li strong {
+    color: var(--highlight2);
+}
+.dropdown-menu .media-list li .badge {
+    background-color: var(--highlight1);
+}
+
+.col-md-8:nth-child(1) {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.layout-sidebar-container {
+    display: none;
+}
+
+/* Style the Load new Posts button */
+
+.label-info {
+    background-color: var(--background2);
+}
+
+/* Account dropdown */
+
+.dropdown-menu {
+    background-color: var(--background2) !important;
+}
