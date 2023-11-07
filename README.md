@@ -1,3 +1,14 @@
 # humhub-styles
 
-Some CSS I wrote for HumHub. You can use pretty much any CSS injector for it (I use Magic CSS). The styling isn't super complete but I'll be updating it as I run into parts of the site that still aren't under the styling I wrote.
+Some CSS styles I wrote for HumHub.
+
+## To use them:
+
+Open your browser and install any CSS injector tool. For Chrome I use Magic CSS, it's the easiest to use that I've tried. For Firefox I use CustomCSS Injector... although I might try something else cause it's got some stuff that annoys me. 
+It doesn't really matter what CSS injector you use, just open it up and paste in the entire contents from either `style.css` or the newer `stylev2.css` files.
+
+
+### Notes
+
+The CSS is a bit better now but it still doesn't override all styles, some places you visit (settings, etc) might look a bit janky. It doesn't really bother me because I rarely visit those places anyways.
+It also hides some stuff on the main dashboard page that I found annoying and centers the content which I like. 
