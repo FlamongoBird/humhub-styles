@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* 
+Feel free to edit this to your liking. I've tried to comment it the best
+I could to make it clear what you can edit and what I'd suggest you leave alone.
+*/
 
-/* Feel free to edit this to your liking, if you do know CSS you can can edit all of it, if 
-not I've commented on a bunch of stuff under :root that will let you change colors, fonts, etc */
-/* For none default fonts you will need to use google fonts, if you've never done it before it's
-very easy, just go to fonts.google.com, find a font you like, select it, and then use the `import`
-tag, not the `link` tag. You just need the part that says `@import url (yada yada)` you can
-leave the <style></style> part out, just like I did with Roboto above. /*
-/* After that go down to the second :root section and change the main/or header font values to 
-whatever font you selected */
-/* Colors can be in pretty much any format, the name, (blue, red, green, etc), the hex value, rgb, rgba, hsl, hsla, etc */
-/* Some examples so you can see the format: */
+/* of course if you know CSS do what you like */
+
+
+
+/* most of my colors are either rgb/rgba or hex, but CSS supports all of these
+formats so use whatever you like */
 
 /*
 rgb: rgb(0, 0, 0);
@@ -20,40 +19,38 @@ hex: #000;
 name: black;
 */
 
-/* A few things like the color for buttons and polls can be gradients */
-/* You can use a tool like cssgradient.io and then copy the value from the second `background: ` */
+/* Some of the stuff like the background for buttons are CSS gradients
+you can just change these to a color if you like, or your can generate
+a gradient, I use cssgradient.io cause I'm too lazy to write my own */
 
+/* just copy the value from the second "background: " line and paste
+that instead of the gradient I have if you want to change it. If that's
+confusing for you just PM me or tag me on a message and I can explain it
+better */
 
-
-
-/* Stuff I wouldn't suggest messing with */
-:root {
-    --background1: rgba(34, 40, 49, .5); /* Old bg stuff, only used for a few items, mostly here for compatability */
-    --background2: rgba(57, 62, 70, .5); /* Same as the one above, just the secondary background */
-    --background-solid1: rgb(34, 40, 49); /* Both of these are the same as well except solid and not opaque */
-    --background-solid2: rgb(57, 62, 70);
-}
 
 /* stuff you can feel free to mess with */
 
 :root {
-    --main-bg: #1c262f; /* The main background color */
-    --fore-bg: #252f39; /* The background color for items on top of the main background */
-    --highlight1: #ee5c75; /* Highlight color 1 (notifs, names, etc) */
-    --highlight2: #92a5c1; /* Secondary highlight (other important text, dividing lines, etc) */
+    --main-bg: #000814ff; /* The main background color */
+    --fore-bg: #171b21; /* The background color for items on top of the main background */
+    --highlight1: #ade8f4; /* Highlight color 1 (notifs, names, etc) */
+    --highlight2: #caf0f8; /* Secondary highlight (other important text, dividing lines, etc) */
     --text: #8093ac; /* Default text color */
     --dull: #bebebe; /* Dull color for less important text */
-    --buttons: #1c262f; /* Background color for buttons */
-    --buttons-hover: #1c262f; /* Background color for buttons on hover */
+    --buttons: #000814ff; /* Background color for buttons */
+    --buttons-hover: #324a5f; /* Background color for buttons on hover */
     --badge-color: #1a9399; /* Color for user badges (CA's, etc) */
     --clear-bg: rgba(28, 38, 47, .9); /* Background for transparent items */
-    --your-pms: rgba(46, 118, 232, .5); /* background color for pm's written by you */
-    --links: lightblue; /* Color for links and tags */
-    --main-font: "Roboto", sans-serif; /* Default font */
-    --header-font: "Roboto", sans-serif; /* Font for headers and other important text */
-    --polls: linear-gradient(90deg, rgba(226,172,172,1) 0%, rgba(238,92,117,1) 100%); /* Background for polls, if you don't know how to write linear-gradients you can use a tool like this one https://cssgradient.io/ */
-     --icons: white; /* Color for small icons (notifs bell, button icons, etc) */
-    --your-tag: #4287f5; /* The color your tags will show up as (making it easy to see where you have been tagged */)
+    --your-pms: #023e8a; /* background color for pm's written by you */
+    --links: #caf0f8; /* Color for links and tags */
+    --main-font: Trebuchet MS; /* Default font */
+    --header-font: Tahoma; /* Font for headers and other important text */
+    --polls: linear-gradient(45deg, rgba(72,202,228,1) 0%, rgba(202,240,248,1) 100%);
+    --polls-background: #000814ff;
+     --icons: #e2eafc; /* Color for small icons (notifs bell, button icons, etc) */
+    --your-tag: #ffd60a; /* The color your tags will show up as (making it easy to see where you have been tagged */
+    --new-name: "Ydubs" /* what you put here will be up in the top left corner */
 }
 
 /* Another important note for updates, if you have changed the values above to your own
@@ -80,8 +77,17 @@ Replace my username with that in quotes below, and it will highlight your userna
 }
 
 
-/* Stop editing here, unless you know CSS or are confident messing with stuff. */
+/* Stuff I wouldn't suggest messing with, it's just old stuff for
+compatability with my old css */
 
+:root {
+    --background1: rgba(34, 40, 49, .5); /* Old bg stuff, only used for a few items, mostly here for compatability */
+    --background2: rgba(57, 62, 70, .5); /* Same as the one above, just the secondary background */
+    --background-solid1: rgb(34, 40, 49); /* Both of these are the same as well except solid and not opaque */
+    --background-solid2: rgb(57, 62, 70);
+}
+
+/* Stop editing here, unless you know CSS or are confident messing with stuff. */
 
 body {
     background-color: var(--main-bg);
@@ -91,6 +97,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--header-font);
+    color: var(--text) !important;
 }
 
 
@@ -101,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .topbar-brand:after {
     position: fixed;
-    content: "Ydubs";
+    content: var(--new-name);
     font-size: 20px;
     top: 11px;
     left: 20px;
@@ -219,10 +226,6 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px var(--highlight2) solid !important;
 }
 
-/* links and tags */
-.media p a, .media p a:visited {
-    color: var(--links) !important;
-}
 
 /* Block quotes */
 blockquote {
@@ -277,18 +280,53 @@ blockquote {
     display: none;
 }
 
+/* Code blocks */
+
+p code {
+    background-color: var(--main-bg)  !important;
+    color: var(--text) !important;
+    font-family: monospace !important;
+}
+pre code {
+    background-color: var(--main-bg)  !important;
+    color: var(--text) !important;
+    font-family: monospace !important;
+}
+.content pre {
+    background-color: var(--main-bg)  !important;
+    color: var(--text) !important;
+    font-family: monospace !important;
+    border-left: none;
+    border-radius: 3px;
+}
+
+/* Redefining hljs syntax highlighting */
+
+.content .hljs-keyword {
+    color: #a087f0 !important;
+}
+.content .hljs-title {
+    color: #6293ea !important;
+}
+.content .hljs-number {
+    color: #ff9070 !important;
+}
+.content .hljs-string {
+    color: #96c178 !important;
+}
+.content .hljs-comment {
+    color: #646b91 !important;
+}
+
+
+
 /* Stuff for username badges (spring guardian, fellowhsip leader, etc) */
 
 /* In comments: */
 .user-badge {
+    background: var(--badge-background);
     background-color: var(--badge-color) !important;
     color: white !important;
-}
-
-/* My navigator stuff */
-
-#my-navigator {
-    
 }
 
 /* post stuff */
@@ -296,9 +334,23 @@ blockquote {
 .wall-entry-content p, .wall-entry-content h1, .wall-entry-content h2, .wall-entry-content h3, .wall-entry-content h4, .wall-entry-content h5, .wall-entry-content h6, .wall-entry-content li, .wall-entry-content span {
     color: var(--text) !important;
 }
-
-.wall-entry-content a {
+/* links and tags */
+.media p a, .media p a:visited {
     color: var(--links) !important;
+}
+
+.wall-entry-content a,
+.markdown-render a,
+.media p a,
+.media p a:visited,
+.wiki-content-info strong a {
+    color: var(--links) !important;
+}
+.wall-entry-content a:hover,
+.markdown-render a:hover,
+.media p a:hover,
+.wiki-content-info strong a:hover {
+    color: var(--links-hover) !important;
 }
 
 .label-default {
@@ -401,6 +453,9 @@ blockquote {
 /* Polls */
 
 
+.progress {
+    background-color: var(--polls-background);
+}
 .progress-bar {
     background-color: var(--highlight1);
     background: var(--polls);
@@ -423,6 +478,59 @@ blockquote {
 .panel-heading a {
     color: inherit;
 }
+#inbox li {
+    border-left-color: var(--highlight2);
+    border-bottom-color: var(--dull);
+}
+#inbox .selected {
+    border-left-color: var(--highlight1);
+}
+.inbox-wrapper hr {
+    border-top-color: var(--highlight2);
+}
+
+.media-body h5 small a {
+    color: var(--highlight2) !important;
+}
+
+.media-body {
+    color: var(--text);
+}
+
+.messagePreviewEntry {
+    border-left-color: var(--highlight2) !important;
+}
+.messagePreviewEntry:hover {
+    border-left-color: var(--highlight1) !important;
+}
+
+/* Wiki Styling */
+
+.wiki-content a {
+    color: var(--links);
+}
+.wiki-content a:hover {
+    color: var(--highlight2);
+}
+
+.wiki-content .fa {
+    color: var(--icon);
+}
+.wiki-content .label {
+    background-color: var(--badge-color);
+    background: var(--badge-background);
+    color: white !important;
+    border: none !important;
+}
+.wiki-menu-fixed li a {
+    color: var(--dull);
+}
+.wiki-menu-fixed li a:hover {
+    background-color: var(--fore-bg);
+    color: var(--highlight2);
+}
+
+
 
 
 /* random styling for oddly specific stuff */
@@ -452,6 +560,11 @@ blockquote {
 
 #dropdown-notifications .new {
     background-color: var(--background2);
+    border-left-color: var(--highlight1) !important;
+}
+#dropdown-notifications .media-list li {
+    border-left-color: var(--highlight2);
+    border-bottom-color: var(--dull);
 }
 #dropdown-notifications .new .media-body  {
     color: var(--text) !important;
@@ -486,6 +599,9 @@ blockquote {
 #space-menu-dropdown .input-group span:hover {
     background-color: var(--main-bg);
 }
+#space-menu-dropdown .divider {
+    background-color: var(--highlight2) !important;
+}
 
 .dropdown-menu .media-list li:hover {
     background-color: var(--background2);
@@ -497,6 +613,14 @@ blockquote {
 .dropdown-menu .media-list li .badge {
     background-color: var(--highlight1);
 }
+
+#space-menu-spaces li {
+    border-color: var(--highlight2);
+}
+#space-menu-spaces li:hover {
+    border-left-color: var(--highlight1);
+}
+
 
 .col-md-8:nth-child(1) {
     display: inline-block;
@@ -520,3 +644,6 @@ blockquote {
 .dropdown-menu {
     background-color: var(--background2) !important;
 }
+
+
+
