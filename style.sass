@@ -1,0 +1,532 @@
+$header-font: monospace
+$main-font: sans-serif
+
+$main-bg: #fffffc
+$secondary-bg: #e9eded
+
+$main-fg: #73899c
+$secondary-fg: #023e8a
+
+$accent1: #0077b6
+$accent2: #848a6f
+
+$usernames: #023e8a
+
+$polls-bg: #cad2c5
+$polls-fg: #84a98c
+    
+$icons: #316ba1;
+
+
+
+/* Important Mixins */
+
+@mixin header($color: red)
+    color: $color !important
+    font-family: $header-font
+
+@mixin dull()
+    color: grey
+
+@mixin links()
+    color: orange
+    text-decoration: underline
+
+@mixin badges($background: red, $foreground: green)
+    background: $background
+    color: $foreground !important
+
+@mixin your-pms()
+    background-color: #a2d2ff
+    border: none
+    
+@mixin button()
+    border: 1.5px solid $accent1 !important
+    background-color: inherit;
+    color: $main-fg !important;
+
+@mixin button-hover()
+    border: 1.5px solid $accent1 !important
+    background-color: $accent1 !important
+    color: white !important
+    transition: .5s
+    
+
+/* Main Styling */
+
+body
+    background-color: $main-bg
+    color: $main-fg
+    font-family: $main-font !important
+
+
+h1, h2, h3, h4, h5, h6
+    @include header($secondary-fg)
+
+
+
+/* we do a lil trolling */
+.topbar-brand
+    a
+        display: none
+    :after
+        position: fixed
+        content: "Test"
+        font-size: 20px
+        top: 11px
+        left: 20px
+
+
+/* top bars */
+
+#account-top-menu
+    background: none
+
+#topbar-first
+    background-color: $main-bg
+
+#topbar-second
+    background-color: $main-bg
+    text-align: center !important
+
+
+.top-menu-item
+    a:hover
+        background-color: $secondary-bg !important
+        border-bottom: none !important
+    
+    .active
+        background-color: $secondary-bg !important
+
+    :hover 
+        border: none !important
+    
+    border: none !important
+
+#top-menu-nav
+    border: none !important
+
+.no-space
+    border-bottom: none !important
+
+
+
+.dropdown a
+    color: $accent1 !important
+    border: none !important
+
+
+
+
+/* panels */
+
+.panel
+    background-color: $secondary-bg
+    border: none
+    box-shadow: none
+
+.count
+    color: $accent1 !important
+
+.list-group a
+    background-color: $main-bg !important
+
+
+
+/* Selects usernames on posts and in comments */
+.wall-entry-header-info, .media-heading a, .media h4 a
+    @include header($usernames)
+
+/* Changes post header */
+.wall-entry-header
+    border-bottom: $accent1 1px solid !important
+
+
+.wall-entry-header .media-subheading .wall-entry-container-link 
+    color: $accent2 !important
+
+/* Changes comment like and bookmark buttons */
+.wall-entry-controls a
+    color: $accent2 !important
+
+/* Changes annoying white line below wall entry controls */
+.comment-container
+    border-top: 1px solid $accent1 !important
+
+    .show-all-link
+        @include dull
+
+/* Changes the line at the comment start seperater */
+.comments-start-separator
+    border-top: 1px solid $accent1 !important
+
+
+/* fixes comment borders */
+.media hr, .comment_create hr
+    border-top: 1px $accent2 solid !important
+
+
+/* Block quotes */
+blockquote
+    border-left-color: $accent1 !important
+
+/* changes color of show more link to links */
+.showMore, .media .content a
+    @include links
+
+
+/* changes text box border on active */
+
+.ProseMirror-focused 
+    border: 2px solid $accent2 !important
+
+
+
+/* Edits Prose Mirror Editor */
+
+.ProseMirror-menubar 
+    background-color: $main-bg !important
+    border: 1px solid $accent1 !important
+    border-bottom: none !important
+
+.ProseMirror-menubar svg 
+    color: $accent2
+
+
+
+/* notifs and stuff */
+
+
+#icon-notifications, #icon-messages 
+    background-color: $main-bg !important
+
+
+#badge-messages, #badge-notifications 
+    background-color: $accent1
+
+#account-dropdown-link 
+    background-color: inherit !important
+
+#account-dropdown-link .user-title 
+    display: none
+
+
+/* Code blocks */
+
+p code, pre code
+    background-color: $main-bg  !important
+    color: $main-fg !important
+    font-family: monospace !important
+
+.content pre 
+    background-color: $main-bg  !important
+    color: $main-fg !important
+    font-family: monospace !important
+    border-left: none
+    border-radius: 3px
+
+
+/* Redefining hljs syntax highlighting */
+
+.content
+    .hljs-keyword 
+        color: #a087f0 !important
+
+    .hljs-title 
+        color: #6293ea !important
+
+    .hljs-number 
+        color: #ff9070 !important
+
+    .hljs-string 
+        color: #96c178 !important
+
+    .hljs-comment 
+        color: #646b91 !important
+
+
+
+
+/* Stuff for username badges (spring guardian, fellowhsip leader, etc) */
+
+/* In comments: */
+.user-badge 
+    @include badges
+
+
+/* post stuff */
+
+.wall-entry-content
+    h1, h2, h3, h4, h5, h6
+        @include header($secondary-fg)
+    p, li, span
+        color: $main-fg !important;
+
+
+.wall-entry-content, .markdown-render, .media p, .wiki-content-info, .content .comment-message p
+    a, a:hover, a:visited
+        @include links
+
+
+.label-default 
+    border: 1px solid $accent2 !important
+    color: $main-fg !important
+
+
+/* icon colors */
+
+.fa 
+    color: $icons
+
+
+.ProseMirror 
+    background-color: $secondary-bg
+    border: none
+    border-radius: 1px !important
+    color: $main-fg !important
+
+
+.ProseMirror p 
+    color: $main-fg !important
+
+
+.well 
+    background-color: $main-bg !important
+    border-top: 3px solid $icons
+
+
+
+.media p 
+    color: $main-fg !important
+
+
+/* buttons */
+            
+.btn
+    @include button
+.btn:hover
+    @include button-hover
+
+            
+
+.regular-checkbox-box 
+    transition: .4s
+    background: none !important
+
+.regular-checkbox-box:hover 
+    border-color: $accent2 !important
+
+
+
+/* Profile Specific */
+
+.panel-profile-header 
+    border: none !important
+
+.left-navigation .panel-heading 
+    background-color: $secondary-bg
+    @include dull
+
+.left-navigation .list-group a 
+    @include dull
+    border-left: $accent2 2px solid !important
+
+.left-navigation .list-group a:hover 
+    border-left: none !important
+
+.edit-account 
+    background-color: $main-bg !important
+    border: 1px solid $accent2
+
+.edit-account:hover 
+    background-color: $secondary-bg !important
+    border: 1px solid $accent2
+
+
+
+/* Polls */
+
+
+.progress 
+    background-color: $polls-bg
+
+.progress-bar 
+    background-color: $accent1
+    background: $polls-fg
+
+
+
+/* PMS */
+
+.conversation-entry-content 
+    background-color: $secondary-bg
+    border: 1px solid
+
+.conversation-entry-content.own 
+    @include your-pms
+
+
+.panel-heading 
+    background-color: $secondary-bg !important
+    color: $main-fg !important
+
+.panel-heading a 
+    color: inherit
+
+#inbox li 
+    border-left-color: $accent2
+
+#inbox .selected 
+    border-left-color: $accent1
+
+.inbox-wrapper hr 
+    border-top-color: $accent2
+
+
+.media-body h5 small a 
+    color: $accent2 !important
+
+
+.media-body 
+    color: $main-fg
+
+
+.messagePreviewEntry 
+    border-left-color: $accent2 !important
+
+.messagePreviewEntry:hover 
+    border-left-color: $accent1 !important
+
+
+/* Wiki Styling */
+
+.wiki-content a 
+    @include links
+
+.wiki-content a:hover 
+    color: $accent2
+
+
+.wiki-content .fa 
+    color: $icons
+
+.wiki-content .label 
+    @include badges
+    color: white !important
+    border: none !important
+
+.wiki-menu-fixed li a 
+    @include dull
+
+.wiki-menu-fixed li a:hover 
+    background-color: $secondary-bg
+    color: $accent2
+
+
+
+
+
+/* random styling for oddly specific stuff */
+
+.sk-spinner-three-bounce div 
+    background-color: $accent1 !important
+
+
+.messagePreviewEntry.selected, .messagePreviewEntry.unread, .messagePreviewEntry:hover 
+    background-color: $secondary-bg !important
+
+
+#dropdown-messages, #dropdown-notifications 
+    background-color: $main-bg !important
+    backdrop-filter: blur(6px) !important
+    box-shadow: 0px 0px 12px black
+
+#dropdown-messages 
+    backdrop-filter: blur(6px)
+
+.wall-stream-filter-head 
+    border-bottom-color: $accent1 !important
+
+
+/* Notifs */
+
+
+#dropdown-notifications .new 
+    background-color: $secondary-bg
+    border-left-color: $accent1 !important
+
+#dropdown-notifications .media-list li 
+    border-left-color: $accent2
+
+#dropdown-notifications .new .media-body  
+    color: $main-fg !important
+
+#dropdown-notifications .new strong  
+    color: $accent2 !important
+
+
+#dropdown-notifications .media-list li:hover 
+    background-color: $secondary-bg
+
+
+/* Spaces Dropdown */
+
+.dropdown.open a, .dropdown a:hover
+    background-color: $main-bg !important
+
+
+#space-menu-dropdown .input-group input 
+    background-color: $main-bg !important
+    border: 1px solid $accent1
+
+#space-menu-dropdown .input-group span 
+    background-color: $secondary-bg
+    border: 1px solid $accent1
+
+#space-menu-dropdown .input-group span:hover 
+    background-color: $main-bg
+
+#space-menu-dropdown .divider 
+    background-color: $accent2 !important
+
+
+.dropdown-menu .media-list li:hover 
+    background-color: $secondary-bg
+
+
+.dropdown-menu .media-list li strong 
+    color: $accent2
+
+.dropdown-menu .media-list li .badge 
+    background-color: $accent1
+
+
+#space-menu-spaces li 
+    border-color: $accent2
+
+#space-menu-spaces li:hover 
+    border-left-color: $accent1
+
+
+
+.col-md-8:nth-child(1) 
+    display: inline-block
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
+
+
+.layout-sidebar-container 
+    display: none
+
+
+/* Style the Load new Posts button */
+
+.label-info 
+    background-color: $secondary-bg
+
+
+/* Account dropdown */
+
+.dropdown-menu 
+    background-color: $secondary-bg !important
