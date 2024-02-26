@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&family=Space+Mono:ital,wght@0,4000,7001,4001,700&display=swap");
+/* Important Mixins */
+/* Main Styling */
+body {
+  background-color: #fffffc;
+  color: #73899c;
+  font-family: "Space Mono", monospace !important; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #023e8a !important;
+  font-family: "Martian Mono", sans-serif; }
+
+/* we do a lil trolling */
+.topbar-brand {
+  after-position: fixed;
+  after-content: "Test";
+  after-font-size: 20px;
+  after-top: 11px;
+  after-left: 20px; }
+  .topbar-brand a {
+    display: none; }
+
+/* top bars */
+#account-top-menu {
+  background: none; }
+
+#topbar-first {
+  background-color: #fffffc; }
+
+#topbar-second {
+  background-color: #fffffc;
+  text-align: center !important; }
+
+.top-menu-item {
+  hover-border: none !important;
+  border: none !important; }
+  .top-menu-item a:hover {
+    background-color: #e9eded !important;
+    border-bottom: none !important; }
+  .top-menu-item .active {
+    background-color: #e9eded !important; }
+
+#top-menu-nav {
+  border: none !important; }
+
+.no-space {
+  border-bottom: none !important; }
+
+.dropdown a {
+  color: #0077b6 !important;
+  border: none !important; }
+
+/* panels */
+.panel {
+  background-color: #e9eded;
+  border: none;
+  box-shadow: none; }
+
+.count {
+  color: #0077b6 !important; }
+
+.list-group a {
+  background-color: #fffffc !important; }
+
+/* Selects usernames on posts and in comments */
+.wall-entry-header-info, .media-heading a, .media h4 a {
+  color: #023e8a !important;
+  font-family: "Martian Mono", sans-serif; }
+
+/* Changes post header */
+.wall-entry-header {
+  border-bottom: #0077b6 1px solid !important; }
+
+.wall-entry-header .media-subheading .wall-entry-container-link {
+  color: #848a6f !important; }
+
+/* Changes comment like and bookmark buttons */
+.wall-entry-controls a {
+  color: #848a6f !important; }
+
+/* Changes annoying white line below wall entry controls */
+.comment-container {
+  border-top: 1px solid #0077b6 !important; }
+  .comment-container .show-all-link {
+    color: grey; }
+
+/* Changes the line at the comment start seperater */
+.comments-start-separator {
+  border-top: 1px solid #0077b6 !important; }
+
+/* fixes comment borders */
+.media hr, .comment_create hr {
+  border-top: 1px #848a6f solid !important; }
+
+/* Block quotes */
+blockquote {
+  border-left-color: #0077b6 !important; }
+
+/* changes color of show more link to links */
+.showMore, .media .content a {
+  color: orange;
+  text-decoration: underline; }
+
+/* changes text box border on active */
+.ProseMirror-focused {
+  border: 2px solid #848a6f !important; }
+
+/* Edits Prose Mirror Editor */
+.ProseMirror-menubar {
+  background-color: #fffffc !important;
+  border: 1px solid #0077b6 !important;
+  border-bottom: none !important; }
+
+.ProseMirror-menubar svg {
+  color: #848a6f; }
+
+/* notifs and stuff */
+#icon-notifications, #icon-messages {
+  background-color: #fffffc !important; }
+
+#badge-messages, #badge-notifications {
+  background-color: #0077b6; }
+
+#account-dropdown-link {
+  background-color: inherit !important; }
+
+#account-dropdown-link .user-title {
+  display: none; }
+
+/* Code blocks */
+p code, pre code {
+  background-color: #fffffc !important;
+  color: #73899c !important;
+  font-family: monospace !important; }
+
+.content pre {
+  background-color: #fffffc !important;
+  color: #73899c !important;
+  font-family: monospace !important;
+  border-left: none;
+  border-radius: 3px; }
+
+/* Redefining hljs syntax highlighting */
+.content .hljs-keyword {
+  color: #a087f0 !important; }
+.content .hljs-title {
+  color: #6293ea !important; }
+.content .hljs-number {
+  color: #ff9070 !important; }
+.content .hljs-string {
+  color: #96c178 !important; }
+.content .hljs-comment {
+  color: #646b91 !important; }
+
+/* Stuff for username badges (spring guardian, fellowhsip leader, etc) */
+/* In comments: */
+.user-badge {
+  background: red;
+  color: green !important; }
+
+/* post stuff */
+.wall-entry-content h1, .wall-entry-content h2, .wall-entry-content h3, .wall-entry-content h4, .wall-entry-content h5, .wall-entry-content h6 {
+  color: #023e8a !important;
+  font-family: "Martian Mono", sans-serif; }
+.wall-entry-content p, .wall-entry-content li, .wall-entry-content span {
+  color: #73899c !important; }
+
+.wall-entry-content a, .wall-entry-content a:hover, .wall-entry-content a:visited, .markdown-render a, .markdown-render a:hover, .markdown-render a:visited, .media p a, .media p a:hover, .media p a:visited, .wiki-content-info a, .wiki-content-info a:hover, .wiki-content-info a:visited, .content .comment-message p a, .content .comment-message p a:hover, .content .comment-message p a:visited {
+  color: orange;
+  text-decoration: underline; }
+
+.label-default {
+  border: 1px solid #848a6f !important;
+  color: #73899c !important; }
+
+/* icon colors */
+.fa {
+  color: #316ba1; }
+
+.ProseMirror {
+  background-color: #e9eded;
+  border: none;
+  border-radius: 1px !important;
+  color: #73899c !important; }
+
+.ProseMirror p {
+  color: #73899c !important; }
+
+.well {
+  background-color: #fffffc !important;
+  border-top: 3px solid #316ba1; }
+
+.media p {
+  color: #73899c !important; }
+
+/* buttons */
+.btn {
+  border: 1.5px solid #0077b6 !important;
+  background-color: inherit;
+  color: #73899c !important; }
+
+.btn:hover {
+  border: 1.5px solid #0077b6 !important;
+  background-color: #0077b6 !important;
+  color: white !important;
+  transition: 0.5s; }
+
+.regular-checkbox-box {
+  transition: 0.4s;
+  background: none !important; }
+
+.regular-checkbox-box:hover {
+  border-color: #848a6f !important; }
+
+/* Profile Specific */
+.panel-profile-header {
+  border: none !important; }
+
+.left-navigation .panel-heading {
+  background-color: #e9eded;
+  color: grey; }
+
+.left-navigation .list-group a {
+  color: grey;
+  border-left: #848a6f 2px solid !important; }
+
+.left-navigation .list-group a:hover {
+  border-left: none !important; }
+
+.edit-account {
+  background-color: #fffffc !important;
+  border: 1px solid #848a6f; }
+
+.edit-account:hover {
+  background-color: #e9eded !important;
+  border: 1px solid #848a6f; }
+
+/* Polls */
+.progress {
+  background-color: #cad2c5; }
+
+.progress-bar {
+  background-color: #0077b6;
+  background: #84a98c; }
+
+/* PMS */
+.conversation-entry-content {
+  background-color: #e9eded;
+  border: 1px solid; }
+
+.conversation-entry-content.own {
+  background-color: #a2d2ff;
+  border: none; }
+
+.panel-heading {
+  background-color: #e9eded !important;
+  color: #73899c !important; }
+
+.panel-heading a {
+  color: inherit; }
+
+#inbox li {
+  border-left-color: #848a6f; }
+
+#inbox .selected {
+  border-left-color: #0077b6; }
+
+.inbox-wrapper hr {
+  border-top-color: #848a6f; }
+
+.media-body h5 small a {
+  color: #848a6f !important; }
+
+.media-body {
+  color: #73899c; }
+
+.messagePreviewEntry {
+  border-left-color: #848a6f !important; }
+
+.messagePreviewEntry:hover {
+  border-left-color: #0077b6 !important; }
+
+/* Wiki Styling */
+.wiki-content a {
+  color: orange;
+  text-decoration: underline; }
+
+.wiki-content a:hover {
+  color: #848a6f; }
+
+.wiki-content .fa {
+  color: #316ba1; }
+
+.wiki-content .label {
+  background: red;
+  color: green !important;
+  color: white !important;
+  border: none !important; }
+
+.wiki-menu-fixed li a {
+  color: grey; }
+
+.wiki-menu-fixed li a:hover {
+  background-color: #e9eded;
+  color: #848a6f; }
+
+/* random styling for oddly specific stuff */
+.sk-spinner-three-bounce div {
+  background-color: #0077b6 !important; }
+
+.messagePreviewEntry.selected, .messagePreviewEntry.unread, .messagePreviewEntry:hover {
+  background-color: #e9eded !important; }
+
+#dropdown-messages, #dropdown-notifications {
+  background-color: #fffffc !important;
+  backdrop-filter: blur(6px) !important;
+  box-shadow: 0px 0px 12px black; }
+
+#dropdown-messages {
+  backdrop-filter: blur(6px); }
+
+.wall-stream-filter-head {
+  border-bottom-color: #0077b6 !important; }
+
+/* Notifs */
+#dropdown-notifications .new {
+  background-color: #e9eded;
+  border-left-color: #0077b6 !important; }
+
+#dropdown-notifications .media-list li {
+  border-left-color: #848a6f; }
+
+#dropdown-notifications .new .media-body {
+  color: #73899c !important; }
+
+#dropdown-notifications .new strong {
+  color: #848a6f !important; }
+
+#dropdown-notifications .media-list li:hover {
+  background-color: #e9eded; }
+
+/* Spaces Dropdown */
+.dropdown.open a, .dropdown a:hover {
+  background-color: #fffffc !important; }
+
+#space-menu-dropdown .input-group input {
+  background-color: #fffffc !important;
+  border: 1px solid #0077b6; }
+
+#space-menu-dropdown .input-group span {
+  background-color: #e9eded;
+  border: 1px solid #0077b6; }
+
+#space-menu-dropdown .input-group span:hover {
+  background-color: #fffffc; }
+
+#space-menu-dropdown .divider {
+  background-color: #848a6f !important; }
+
+.dropdown-menu .media-list li:hover {
+  background-color: #e9eded; }
+
+.dropdown-menu .media-list li strong {
+  color: #848a6f; }
+
+.dropdown-menu .media-list li .badge {
+  background-color: #0077b6; }
+
+#space-menu-spaces li {
+  border-color: #848a6f; }
+
+#space-menu-spaces li:hover {
+  border-left-color: #0077b6; }
+
+.col-md-8:nth-child(1) {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.layout-sidebar-container {
+  display: none; }
+
+/* Style the Load new Posts button */
+.label-info {
+  background-color: #e9eded; }
+
+/* Account dropdown */
+.dropdown-menu {
+  background-color: #e9eded !important; }
+
+/*# sourceMappingURL=output.css.map */
